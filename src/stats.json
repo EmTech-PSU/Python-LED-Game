@@ -1,15 +1,12 @@
-// formating for json file
-
 {
-    "gameNum":
-        "player1Name":""
-            "score":""
-            "missed":""
-            "hit":""
-            "percentage":""
-        "player2Name":""
-            "score":""
-            "missed":""
-            "hit":""
-            "percentage":
+    "Game": {
+        "Game Number":0
+        "Player1":{
+            "Name":""
+             "Hits":0
+             "Misses":0
+             "Average Hits":0.0
+             "Average Misses":0.0
+        }
+    }
 }

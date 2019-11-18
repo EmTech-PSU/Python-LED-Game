@@ -1,5 +1,6 @@
 import tkinter as tk
 
+
 frame = tk.Tk()
 frame.title("Python LED Game")
 
@@ -17,26 +18,32 @@ entry2 = tk.Entry(frame)
 entry2.focus_set
 entry2.grid(column  = 1, row = 1)
 
+#Quits the program
 def quitProgram():
-    pass
+    frame.quit()
+
 def sendText():
     pass
+
 def getStats():
-    pass
+    win = tk.Tk()
+    win.title("Score Board")
+    win.mainloop()
+
 def startGame():
     pass
 
 def getText():
     player1Name = entry1.get()
-    player2Name = entry1.get()
+    player2Name = entry2.get()
 
 sendBtn = tk.Button(frame, text='Submit Names')
 sendBtn.grid(column = 0, row = 2)
 startBtn = tk.Button(frame, text='Start Game')
 startBtn.grid(column = 1, row = 2)
-statsBtn = tk.Button(frame, text='Stats')
+statsBtn = tk.Button(frame, text='Stats', command = getStats)
 statsBtn.grid(column = 2, row = 2)
-quitBtn = tk.Button(frame, text='Quit')
+quitBtn = tk.Button(frame, text='Quit', command = quitProgram)
 quitBtn.grid(column = 3, row = 2)
 
 
