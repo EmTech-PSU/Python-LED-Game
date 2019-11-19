@@ -3,12 +3,12 @@ import time
 
 class Game:
     game_num = 0
-    p1LED = 16
-    p2LED = 7
-    p1Button = 18
-    p2Button = BUTTON_PIN
-    ledArrAsc = [11,12,13,15]
-    ledArrDes = [15,13,12,11]
+    p1LED = 18
+    p2LED = 11
+    p1Button = 7
+    p2Button = 22
+    ledArrAsc = [12,13,15,16]
+    ledArrDes = [16,15,13,12]
     timeSleep = 1.5
 
     #setup board, button, and pins
@@ -18,24 +18,25 @@ class Game:
     for i in ledArrAsc:
         GPIO.setup(i,GPIO.OUT)
 
+    #def getAverage(self, hits, misses):
+     #   total = hits + misses
+      #  averageHitPercent  = (total / hits)*100
+       #return averageHitPercent, averageMissPercent
+    
     #Constructor includes name, hits, misses, and the average
     def __init__(self, p1Name, p1Hits, p1Misses, p1Average, p2Name, p2Hits, p2Misses, p2Average):
         self.p1Name = p1Name
         self.p1Hits = p1Hits
         self.p1Misses = p1Misses
-        self.p1Average = getAverage(self, self.p1Hits, self.p1Misses)
+       # self.p1Average = getAverage(self, self.p1Hits, self.p1Misses)
         self.p2Name = p2Name
+        self.p2Hits = p2Hits
         self.p2Misses = p2Misses
-        self.p2Average = getAverage()
+       # self.p2Average = getAverage(self, self.p2Hits, self.p2Misses)
         Game.game_num += 1
 
 
-    # method for hit & miss percentiale
-    def getAverage(self, hits, misses):
-        total = hits + misses
-        averageHitPercent  = (total / hits)*100
-        averageMissPercent = (total / misses)*100
-        return averageHitPercent, averageMissPercent
+   
 
     def detectHitP1():
         startTime = time.time()
