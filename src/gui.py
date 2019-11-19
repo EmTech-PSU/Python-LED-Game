@@ -1,4 +1,5 @@
 import tkinter as tk
+from Game import Game
 
 
 frame = tk.Tk()
@@ -37,9 +38,14 @@ def getText():
     player1Name = entry1.get()
     player2Name = entry2.get()
 
+
+
 sendBtn = tk.Button(frame, text='Submit Names')
 sendBtn.grid(column = 0, row = 2)
-startBtn = tk.Button(frame, text='Start Game')
+
+game = Game("", 0, 0, 0, "", 0, 0, 0)
+
+startBtn = tk.Button(frame, text='Start Game', command = game.runGame)
 startBtn.grid(column = 1, row = 2)
 statsBtn = tk.Button(frame, text='Stats', command = getStats)
 statsBtn.grid(column = 2, row = 2)
